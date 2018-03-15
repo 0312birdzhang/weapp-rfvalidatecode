@@ -1,0 +1,65 @@
+/* pages/main/index.wxss */
+
+.container-box {
+  background-color: #efeff4;
+  height: 100vh;
+}
+
+.img-box {
+  padding: 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  position: relative;
+}
+
+.img-box image {
+  width: 686rpx;
+  height: 686rpx;
+  background-color: #f9f9f9;
+}
+
+.img-box .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.mybtn {
+  width: 686rpx;
+  margin: 60rpx auto;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.home-section-title {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120rpx;
+  border-radius: 10rpx;
+  color: #217834;
+  padding-left: 30rpx;
+}
+
+.home-next-btn {
+  margin-right: 30rpx;
+  height: 45rpx;
+  width: 45rpx;
+}
+
+.divLine {
+  background: #FFFFFF;
+  width: 100%;
+  height: 5rpx;
+}
