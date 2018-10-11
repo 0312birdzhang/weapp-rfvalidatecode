@@ -51,6 +51,11 @@ Page({
     return size;
   } ,
   createQrCode:function(canvasId,cavW,cavH){
+    wx.showToast({
+      title: '生成中...',
+      icon: 'loading',
+      duration: 3000
+    });
     //调用插件中的draw方法，绘制二维码图片
     var text = Util.getCode();
     QR.qrApi.draw(text, canvasId, cavW, cavH);

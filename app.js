@@ -5,6 +5,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs);
+    // this.getUserInfo();
     this.getCodeInfo();
   },
   getUserInfo:function(cb){
@@ -26,6 +27,8 @@ App({
     }
   },
   getCodeInfo: function(cb){
+    // const db = wx.cloud.database();
+    // const codes = db.collection('codes');
     var that = this
     if (this.globalData.codeInfo) {
       typeof cb == "function" && cb(this.globalData.codeInfo)

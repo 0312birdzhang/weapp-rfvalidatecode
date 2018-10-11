@@ -1,3 +1,7 @@
+// const db = wx.cloud.database();
+// const codes = db.collection('codes');
+
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -24,14 +28,30 @@ function getCode(){
   var renFengCode = "";
   var phoneNum = "";
   var idNum = "";
-  if (app.globalData.codeInfo) {
+  const localcodeInfo = wx.getStorageSync("code");
+  if (!app.globalData.codeInfo && localcodeInfo) {
+    app.globalData.codeInfo = localcodeInfo;
+    
+  }
+  if(!app.globalData.codeInfo){
+    return null;
+  }else{
     renFengCode = app.globalData.codeInfo.renFengCode;
     phoneNum = app.globalData.codeInfo.phoneNum;
     idNum = app.globalData.codeInfo.idNum;
     return idNum + "|" + phoneNum + "|" + new Date().getTime() + "|" + renFengCode;
-  }else{
-    return null;
+    
   }
+  // else if(!localcodeInfo){
+  //   //从云端获取
+  //   codes.doc(app.globalData.userInfo.openId).get({
+  //     success: function (res) {
+  //       // res.data 包含该记录的数据
+  //       console.log(res.data)
+  //       app.globalData.codeInfo = res.data;
+  //     }
+  //   })
+  // }  
 }
 
 function setCode(code){
@@ -47,6 +67,7 @@ function setCode(code){
       idNum: idNum
     }
     wx.setStorageSync("code",app.globalData.codeInfo);
+    //保存到云数据库
     return true;
   }else{
     return false;
