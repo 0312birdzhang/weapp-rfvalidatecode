@@ -8,10 +8,10 @@
     <canvas bindtap="previewImg" hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
     <!-- <image mode="scaleToFill" bindtap="initCode" src="../../images/init.jpg" hidden='{{isInited}}'></image>  -->
     <view class="text-box" scroll-y="true" hidden='{{isInited}}'>
-      <text>1、第一次要下载楼小二，注册\n
-            2、点击过闸二维码，保存\n
-            3、使用本程序初始化，从相册选择二维码\n
-            4、第二次使用则直接用保存的数据
+      <text>① 第一次要下载楼小二，注册\n
+            ② 点击过闸二维码，保存\n
+            ③ 使用本程序初始化，从相册选择二维码\n
+            ④ 第二次使用则直接用保存的数据
       </text>
     </view>
   </view>
@@ -21,8 +21,12 @@
   <view class="home-section-title" bindtap="recognizeCode" hidden='{{isInited}}'>
     <text class="home-section-title-make">选择二维码初始化</text>
     <image class="home-next-btn" src="../../images/next.png"></image>
+    
   </view>
+  <view class="divLine"></view>
+  <ad unit-id="adunit-16575d7b6152f466"></ad>  
 </view>
+
 
 <view hidden="{{maskHidden}}" class="mask"></view>
 <view class="canvas-box">
